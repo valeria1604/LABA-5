@@ -43,7 +43,7 @@ class Bus implements Runnable {
 
 
 	// Referencja na obiekt reprezentuj№cy most.
-	NarrowBridge bridge;
+	NarrowBridgeAnimation bridge;
 
 	// Unikalny identyfikator kaїdego busa.
 	// Jako identyfikator zostanie uїyty numer busa,
@@ -54,7 +54,7 @@ class Bus implements Runnable {
 	BusDirection dir;
 
 
-	Bus(NarrowBridge bridge){
+	public Bus(NarrowBridgeAnimation bridge){
 		this.bridge = bridge;
 		this.id = ++numberOfBuses;
 		if (ThreadLocalRandom.current().nextInt(0, 2) == 0)
@@ -64,37 +64,37 @@ class Bus implements Runnable {
 
 
 	// Wydruk w konsoli informacji o stanie busa
-	void printBusInfo(String message){
+	private void printBusInfo(String message){
 		System.out.println("Bus[" + id + "->"+dir+"]: " + message);
 	}
 
 
 	// Symulacja oczekiwania na nowych pasaїerуw.
-	void boarding() {
+	private void boarding() {
 		printBusInfo("Czeka na nowych pasaїerуw");
 		sleep(MIN_BOARDING_TIME, MAX_BOARDING_TIME);
 	}
 
 	// Symulacja dojazdu ze stacji pocz№tkowej do mostu
-	void goToTheBridge() {
+	private void goToTheBridge() {
 		printBusInfo("Jazda w stronк mostu");
 		sleep(GETTING_TO_BRIDGE_TIME);
 	}
 
 	// Symulacja przejazdu przez most
-	void rideTheBridge(){
+	private void rideTheBridge(){
 		printBusInfo("Przejazd przez most");
 		sleep(CROSSING_BRIDGE_TIME);
 	}
 
 	// Symulacja przejazdu od mostu do koсcowego parkingu
-	void goToTheParking(){
+	private void goToTheParking(){
 		printBusInfo("Jazda w stronк koсcowego parkingu");
 		sleep(GETTING_PARKING_TIME);
 	}
 
 	// Symulacja opuszczenia pojazdu na przystanku koсcowym
-	void unloading(){
+	private void unloading(){
 		printBusInfo("Rozіadunek pasaїerуw");
 		sleep(UNLOADING_TIME);
 	}
