@@ -36,6 +36,7 @@
 //        // Prosty warunek wjazudu na most:
 //        // DOPУKI LISTA BUSУW NA MOЊCIE NIE JEST PUSTA
 //        // KOLEJNY BUS MUSI CZEKAЖ NA WJAZD
+//TODO buses on the bridge (size)
 //        while (!busesOnTheBridge.isEmpty()) {
 //            // dodanie busa do listy oczekuj№cych
 //            busesWaiting.add(bus);
