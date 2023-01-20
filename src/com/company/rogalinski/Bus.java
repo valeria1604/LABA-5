@@ -26,7 +26,6 @@ class Bus implements Runnable {
 	// od pocz№tku dziaіania programu
 	private static int numberOfBuses = 0;
 
-
 	// Metoda usypia w№tek na podany czas w milisekundach
 	public static void sleep(int millis) {
 		try {
